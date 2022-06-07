@@ -1,0 +1,26 @@
+<section>
+    <div class="container">
+        <h2>New Arrival</h2>
+        <hr>
+        <div class="row">
+            <div *ngFor="let bookDetail of bookDetails" class="col-md-4 text-center d-flex align-items-stretch" >
+                <div class="card product-card h-100">
+                    <div *ngIf="bookDetail.booksRating > 4" class="badge">Hot</div>
+                    <div class="product-tumb">
+                        <img [src]="bookDetail.bookImg" alt="">
+                    </div>
+                    <div class="product-details">
+                        <span class="product-catagory">{{bookDetail.bookType}}</span>
+                        <h4><a>{{bookDetail.bookName}}</a></h4>
+                        <div class="product-bottom-details">
+                            <div class="product-price">{{ bookDetail.bookPrice }}</div>
+                            <div class="product-links">
+                                <button class="btn btn-primary">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
